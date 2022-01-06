@@ -1,4 +1,4 @@
-package RetoString;
+package stringChallenge;
 
 import org.junit.Test;
 import static org.junit.Assert.*;

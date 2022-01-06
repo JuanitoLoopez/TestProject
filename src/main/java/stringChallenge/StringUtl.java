@@ -1,4 +1,4 @@
-package RetoString;
+package stringChallenge;
 
 public class StringUtl {
     public static boolean isEmpty(String str) {
