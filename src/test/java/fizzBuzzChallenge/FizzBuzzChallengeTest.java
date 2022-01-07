@@ -31,5 +31,4 @@ public class FizzBuzzChallengeTest {
         assertTrue("FizzBuzz", fizzBuzzChallenge.fizzBuzz(60L).equals("FizzBuzz"));
     }
 
-
 }
