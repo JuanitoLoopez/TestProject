@@ -1,22 +1,25 @@
 package fizzBuzzChallenge;
 
 public class FizzBuzzChallenge {
-    private Long number = 30L;
-    private String result = "";
 
-    private static String fizzBuzz(Long number, String result) {
+    public static String fizzBuzz(Long number) {
+        String result = "";
         for (int i = 0; i <= number; i++) {
-            if(number % 3 == 0) {
+            if(number % 3 == 0 && number % 5 != 0) {
                 result = "Fizz";
                 return result;
-            } else if (number % 5 == 0) {
+            } else if (number % 5 == 0 && number % 3 != 0) {
                 result = "Buzz";
                 return result;
-            } else {
+            } else if (number % 3 == 0 && number % 5 == 0) {
                 result = "FizzBuzz";
+                return result;
+            } else {
+                result = String.valueOf(i);
                 return result;
             }
         }
         return result;
     }
+
 }
