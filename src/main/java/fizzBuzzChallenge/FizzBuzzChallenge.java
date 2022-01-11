@@ -21,5 +21,4 @@ public class FizzBuzzChallenge {
         }
         return result;
     }
-
 }
