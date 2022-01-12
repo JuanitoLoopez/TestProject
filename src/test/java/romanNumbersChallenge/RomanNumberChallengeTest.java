@@ -32,5 +32,19 @@ public class RomanNumberChallengeTest {
         assertTrue("LXXXVI", romanNumberChallenge.changeToRomanNumber(86) == "LXXXVI");
         assertTrue("CXXVI", romanNumberChallenge.changeToRomanNumber(126) == "CXXVI");
         assertTrue("MMDVII", romanNumberChallenge.changeToRomanNumber(2507) == "MMDVII");
+
+        // Números que se restan de otros números.
+        assertTrue("IV", romanNumberChallenge.changeToRomanNumber(4) == "IV");
+        assertTrue("IX", romanNumberChallenge.changeToRomanNumber(9) == "IX");
+        assertTrue("XIV", romanNumberChallenge.changeToRomanNumber(14) == "XIV");
+        assertTrue("XIX", romanNumberChallenge.changeToRomanNumber(19) == "XIX");
+        assertTrue("XXIV", romanNumberChallenge.changeToRomanNumber(24) == "XXIV");
+        assertTrue("XL", romanNumberChallenge.changeToRomanNumber(40) == "XL");
+        assertTrue("XLIX", romanNumberChallenge.changeToRomanNumber(49) == "XLIX");
+        assertTrue("XC", romanNumberChallenge.changeToRomanNumber(90) == "XC");
+        assertTrue("XCIX", romanNumberChallenge.changeToRomanNumber(99) == "XCIX");
+        assertTrue("CD", romanNumberChallenge.changeToRomanNumber(400) == "CD");
+        assertTrue("CM", romanNumberChallenge.changeToRomanNumber(900) == "CM");
+
     }
 }

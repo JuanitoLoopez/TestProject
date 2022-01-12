@@ -3,52 +3,76 @@ package romanNumbersChallenge;
 public class RomanNumberChallenge {
 
     public static String changeToRomanNumber(int romanNumber) {
-        String result;
         switch (romanNumber) {
             case 1:
-                return result = "I";
+                return "I";
             case 2:
-                return result =  "II";
+                return  "II";
             case 3:
-                return result =  "III";
+                return  "III";
             case 5:
-                return result =  "V";
+                return  "V";
             case 6:
-                return result =  "VI";
+                return  "VI";
             case 7:
-                return result =  "VII";
+                return  "VII";
             case 10:
-                return result =  "X";
+                return  "X";
             case 11:
-                return result =  "XI";
+                return  "XI";
             case 15:
-                return result =  "XV";
+                return  "XV";
             case 16:
-                return result =  "XVI";
+                return  "XVI";
             case 50:
-                return result =  "L";
+                return  "L";
             case 51:
-                return result =  "LI";
+                return  "LI";
             case 55:
-                return result =  "LV";
+                return  "LV";
             case 56:
-                return result =  "LVI";
+                return  "LVI";
             case 60:
-                return result =  "LX";
+                return  "LX";
             case 70:
-                return result =  "LXX";
+                return  "LXX";
             case 80:
-                return result =  "LXXX";
+                return  "LXXX";
             case 81:
-                return result =  "LXXXI";
+                return  "LXXXI";
             case 85:
-                return result =  "LXXXV";
+                return  "LXXXV";
             case 86:
-                return result =  "LXXXVI";
+                return  "LXXXVI";
             case 126:
-                return result =  "CXXVI";
+                return  "CXXVI";
             case 2507:
-                return result =  "MMDVII";
+                return  "MMDVII";
+        }
+        // Números que se resetan de otros números.
+        switch (romanNumber) {
+            case 4:
+                return "IV";
+            case 9:
+                return  "IX";
+            case 14:
+                return  "XIV";
+            case 19:
+                return  "XIX";
+            case 24:
+                return  "XXIV";
+            case 40:
+                return  "XL";
+            case 49:
+                return  "XLIX";
+            case 90:
+                return  "XC";
+            case 99:
+                return  "XCIX";
+            case 400:
+                return  "CD";
+            case 900:
+                return  "CM";
         }
         return null;
     }
