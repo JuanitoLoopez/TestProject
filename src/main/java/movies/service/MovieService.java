@@ -16,7 +16,7 @@ public class MovieService {
 
     public Collection<Movie> findMoviesByGenre(Genre genre) {
 
-        Collection<Movie> allMovies = movieRepository.findall();
+        Collection<Movie> allMovies = movieRepository.findAll();
 
         return allMovies;
     }
