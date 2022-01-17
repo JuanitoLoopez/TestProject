@@ -5,6 +5,7 @@ import movies.data.MovieRepository;
 import movies.model.Genre;
 
 import java.util.Collection;
+import java.util.stream.Collectors;
 
 public class MovieService {
 
@@ -16,8 +17,6 @@ public class MovieService {
 
     public Collection<Movie> findMoviesByGenre(Genre genre) {
 
-        Collection<Movie> allMovies = movieRepository.findAll();
-
-        return allMovies;
+        return movieRepository.findAll().stream().filter(movie -> movie.getGenre() == genre).collect(Collectors.toList());
     }
 }
