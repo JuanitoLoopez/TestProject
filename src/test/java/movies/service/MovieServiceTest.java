@@ -1,11 +1,13 @@
 package movies.service;
 
 import movies.data.MovieRepository;
+import movies.data.MovieRepositoryJDCB;
 import movies.model.Genre;
 import movies.model.Movie;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.util.Arrays;
 import java.util.Collection;
