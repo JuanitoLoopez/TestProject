@@ -25,10 +25,12 @@ public class MovieRepositoryIntegrationJDCBTest {
     MovieRepositoryJDCB movieRepositoryJDCB;
     DataSource dataSource;
 
+    /*"jdbc:h2:{ {.|mem:}[test] | [sql:]test_date.sql | {tcp|ssl}:[//]server[:port][,server2[:port]]/name }[;MODE=MYSQL...]"*/
+
     @Before
     public void set_up() throws SQLException {
         dataSource = new DriverManagerDataSource("jdbc:h2:mem:test;MODE_MYSQL", "sa", "sa");
-        ScriptUtils.executeSqlScript(dataSource.getConnection(), new ClassPathResource("sql_scripts/test_data.sql"));
+        ScriptUtils.executeSqlScript(dataSource.getConnection(), new ClassPathResource("testZZ/java/sql_scripts/test_data.sql"));
         JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
         movieRepositoryJDCB = new MovieRepositoryJDCB(jdbcTemplate);
     }
@@ -53,7 +55,10 @@ public class MovieRepositoryIntegrationJDCBTest {
 
     @Test
     public void insert_a_movie() {
-
+        Movie movie =  new Movie("Super 8", 112, Genre.THRILLER);
+        movieRepositoryJDCB.saveOrUpdate(movie);
+        Movie movieFormDB = movieRepositoryJDCB.findById(4);
+        assertEquals(new Movie(4, "Super 8", 112, Genre.THRILLER), movieFormDB);
     }
 
     @After
@@ -61,8 +66,4 @@ public class MovieRepositoryIntegrationJDCBTest {
         final Statement s = dataSource.getConnection().createStatement();
         s.execute("drop all objects delete files");
     };
-
-
-
-
 }
