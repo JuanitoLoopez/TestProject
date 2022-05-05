@@ -60,6 +60,13 @@ public class MovieRepositoryIntegrationJDCBTest {
         Movie movieFormDB = movieRepositoryJDCB.findById(4);
         assertEquals(new Movie(4, "Super 8", 112, Genre.THRILLER), movieFormDB);
     }
+    @Test
+    public void load_movie_by_template() {
+        Movie movie =  new Movie("Super 8", 112, Genre.THRILLER);
+        movieRepositoryJDCB.saveOrUpdate(movie);
+        Movie movieFormDB = movieRepositoryJDCB.findById(4);
+        assertEquals(new Movie(null, 112, Genre.THRILLER), movieFormDB);
+    }
 
     @After
     public void tearDown() throws SQLException {
